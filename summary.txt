@@ -1,0 +1,100 @@
+6.1 Sign Up Screen part One 
+
+index.html : 대부분의 웹서버가 디폴트 index.html을 찾아보도록 설정
+! : 기본적인 html 구성을 보여줌 
+
+6.2 BEM
+
+BEM 규칙 (Block Element Modifier) - 좀더 쉽게 css를 읽기 위함.
+
+프로그래머는 왠만하면 class로 쓰자고 정함. 
+
+단점: 코딩이 엄청 길어지거나 커질수 있다. 
+
+6.3 Font Awesome 
+
+6.4 Sign up Screen part Two 
+
+헤더작성,
+마찬가지로 어떤 페이지든 공통적으로 헤더를 가지고 있으므로 구분 가능하게 클래스를 만들어줘야함
+
+form 작성
+id pw 입력창과 버튼두개
+form에서 버튼은 type submit으로
+그리고 이번 프로젝트에 form은 많이 필요하지 않기 때문에 클래스 아이디를 고민안해도됨
+
+하지만 링크는 많이 사용되기 때문에 구분하기 위한 클래스나 아이디를 만들기 귀찮아서 form태그 안에 넣어둠
+
+6.5 Status Bar css
+
+link:css + enter : css링크 단축키
+
+web font
+- link 보다 import를 추천한다.
+- import위치는 제일 상단
+- body에 font-family 추가
+- 모든 폰트를 추가하면 웹사이트 무거워진다.
+[Google Fonts](https://fonts.google.com/)
+
+css hack(justify-content대신사용가능)
+- 레시피 같이 어디든 쓸 수 있다. 이상하지만 작동한다.
+- 1 상위 박스 : justify-content: center; -중앙으로 몰림
+- 2 내부 박스 범위 : width: 33%; -왼쪽으로 몰려서 범위 벌어짐, 왼쪽 위치할 박스는 왼쪽에 붙어서 정렬됨
+- 3 중앙에 위치할 박스 : display: flex; justify-content: center; -중앙에 위치할 박스만 중앙에 위치함
+- 4 오른쪽에 정렬할 박스 : *display*: flex; *justify-content*: flex-end; *align-items*: center; -오른쪽에 붙어서 정렬됨
+
+
+6.6 Sign Up Screen part Three
+요약
+리셋 CSS reset css = 기본적으로 브라우저에서 제공하는 body의 margin을 없애는 것
+h1, p tag같은 텍스트를 다루는 tag들을 가운데 정렬 할 때는 text-align:center 이용
+
+리셋 Css 사용해서 앱이나 웹을 만들기전에 초기화 하는것이 좋다
+
+6.7 Log in Form part One 
+
+6.8 Log in Form part Two 
+
+6.9 Recap and Forms 
+- #login-form ... 으로 썼찌만, .login-from___ ... 으로 써도된다. 더 편한 방식을 택하면 된다.
+- CSS 파일에서 주석처리는 /* */로 감싸주면 된다.
+- styles.css 파일에는 font-family와 같이 모든 스크린에 적용될 수 있는 스타일을 써놓는다.( or 모든 스크린의 background-color) 이는 하나의 방식이고, 자신만의 편한 방식을 택하면 된다.
+- form은 중요한 2가지 속성(attribute)을 가지고 있다. 하나는 action이고, 다른 하나는 method이다.
+- action은 어떤 페이지로 data를 보낼건지 지정할 수 있다.
+- action에 적어 놓은 URL에 해당하는 파일이 반드시 존재해야한다.
+- method는 2가지 방식 중 하나를 쓸 수 있다. 하나는 POST이고, 다른 하나는 GET이다.
+- POST는 백엔드 서버에 정보를 전송하는 방식이라 이번 강의에서는 사용할 수 없다.
+- GET 방식은 보안에 취약하다. username이랑 password를 GET 방식으로 보내선 안된다. URL에 포함되어도 상관없는 정보들을 GET 방식으로 보내는 것이다.
+
+6.10 Navigation Bar part One 
+- navigation 안의 ul 안에 많은 li들로 구성되는데, 검색엔진 구글도 navigation을 찾아서 ul의 li 안에 있는 link를 가져오게끔 설정되어 있다.
+- VSC의 단축키로 navigation에서 하위메뉴까지 한번에 자동 완성 시킬 수 있다.
+→ nav>il>li*(필요한 갯수)>a
+→ 그 후 #과 tab만으로 간편하게 작성이 가능하다.(수정하다보면 다음 tab이 옳게 먹히지 않는다.)
+- 점 3개는 ellipsis라고 한다.
+- 속성과 class 이름이 똑같아도 상관없다.
+- 메인 styles.css에 다른 요소의 css를 import 할 때, 순서를 지키는 것이 정말 중요하다.
+
+HTML code 작성 시, nav>ul>li*4>a 처럼 입력하면
+nav 안에 ul 안에 li 4개, 각각의 li는 a를 가진다. 로 해석되어
+한 줄로 입력하여 생성 가능
+점 3개 이름은 ellipsis
+
+
+6.11 Navigation Bar part two 
+
+네비게이션 바 하단에 고정하기
+position: fixed
+bottom: 0
+width:100%
+box-sizing: border-box
+
+6.12 Border Box 
+css box padding의 디폴트 원리
+200픽셀의 박스에 50픽셀의 패딩을 주면, css는 기존 박스의 가로를 유지하기 위해 50만큼 박스를 늘림.
+이를 막기 위해 box-sizing:border-box를 쓰면 box의 크기를 유지한 채 padding을 줄 수 있다.
+
+6.13 Navigation Bar part Three 
+
+6.14 Screen Header 
+
